@@ -1,0 +1,12 @@
+<div class="menu">
+	<h1>admin Menu</h1>
+	<%flash.each do |type , msg|%>
+	<div>
+		<%=msg%>
+	</div>
+	<%end%>
+	<ul>
+		<li><%=link_to("View all" ,users_path)%></li>
+		<li><%=link_to("log out" ,access_logout_path)%></li>
+	</ul>
+</div>

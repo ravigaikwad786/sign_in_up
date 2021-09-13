@@ -1,0 +1,31 @@
+<div class="Subjects index">
+    <h2>Index Page</h2>
+    <%flash.each do |type,msg|%>
+    <div>
+        <%=msg%>
+    </div>
+    <%end%>
+    <%= link_to 'Add new' , new_user_path , :class => 'action new'%>
+
+    <table class="listening" summary="list">
+        <tr class="header">
+            <th>#</th>
+            <th>name</th>
+            <th>email</th>
+            <th>password</th>
+        </tr>
+        <% @users.each do |user|%>
+        <tr>
+            <td><%=user.id%></td>
+            <td><%=user.name%></td>
+            <td><%=user.email%></td>
+            <td><%=user.password_digest%></td>
+            <td>
+                <%= link_to("Show" ,'#',:class=>'action show')%>
+                <%= link_to("Edit" , '#', :class=>'action edit')%>
+                <%= link_to("Delete" , '#', :class=>'action delete' )%>
+            </td>
+        </tr>
+        <%end%>
+    </table>
+</div>

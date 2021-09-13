@@ -1,0 +1,27 @@
+<div class="login">
+	<%flash.each do |type , msg|%>
+	<div>
+		<%=msg%>
+	</div>
+	<%end%>
+
+	<%=form_tag(access_attempt_login_path , :method => :post ) do %>
+	<table>
+		<tr>  
+			<td><%=label_tag(:email)%></td>
+			<td><%=text_field_tag(:email , params[:email])%></td>
+		</tr>
+		<tr>
+			<td><%=label_tag(:password)%></td>
+			<td><%=password_field_tag(:password)%></td>
+		</tr>
+		<tr>
+			
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td><%=submit_tag("Log_in")%></td>
+		</tr>
+	</table>
+	<%end%>
+</div>
